@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+  "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+  
+<tiles-definitions>
+	
+	<definition name="intro" template="/WEB-INF/views/template/mainLayout.jsp">
+		<put-attribute name="title" value="첫 스프링 사이트" />
+		<put-attribute name="header" value="/WEB-INF/views/template/header.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/template/footer.jsp" />
+	</definition>
+	
+	<definition name="content" template="/WEB-INF/views/template/contentLayout.jsp">
+		<put-attribute name="title" value="첫 스프링 사이트" />
+		<put-attribute name="header" value="/WEB-INF/views/template/header.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/views/template/footer.jsp" />
+	</definition>
+
+	<definition name="client/board/*" extends="content">
+		<put-attribute name="title" value="기본 게시판" />
+		<put-attribute name="body" value="/WEB-INF/views/client/board/{1}.jsp" />
+	</definition>
+	
+	<definition name="data/*" extends="content">
+		<put-attribute name="title" value="공공데이터" />
+		<put-attribute name="body" value="/WEB-INF/views/data/{1}.jsp" />
+	</definition>
+	
+</tiles-definitions>
